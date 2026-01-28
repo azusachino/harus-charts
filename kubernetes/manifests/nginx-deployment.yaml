@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.25
+        image: 097102939699.dkr.ecr.ap-northeast-1.amazonaws.com/harus-nginx:latest
         ports:
         - containerPort: 80
         resources:
