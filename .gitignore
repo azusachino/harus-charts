@@ -1,17 +1,19 @@
-# Node.js / cdk8s
+# Node.js / application
 node_modules/
-dist/
+__snapshots__/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .DS_Store
+*.d.ts
+*.js
+!jest.config.js
 
-# cdk8s generated files (keep source, ignore artifacts)
-cdk8s/imports/
-cdk8s/*.d.ts
-cdk8s/*.js
-!cdk8s/jest.config.js
-!cdk8s/main.test.js
+# application generated files (keep source, ignore artifacts)
+application/imports/
+application/*.d.ts
+application/*.js
+application/main.test.js
 
 # Helm
 helm/**/charts/

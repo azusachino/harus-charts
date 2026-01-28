@@ -1,9 +1,8 @@
 {
-  "name": "cdk8s",
+  "name": "application",
   "version": "1.0.0",
-  "main": "main.js",
-  "types": "main.ts",
-  "license": "Apache-2.0",
+  "main": "src/main.js",
+  "types": "src/main.ts",
   "private": true,
   "scripts": {
     "import": "cdk8s import",

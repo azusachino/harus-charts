@@ -9,65 +9,65 @@ help:
 	@echo ""
 	@echo "Targets:"
 	@echo "  install    Install all dependencies (mise, npm)"
-	@echo "  import     Import Kubernetes API schemas and CRDs for cdk8s"
+	@echo "  import     Import Kubernetes API schemas and CRDs for application"
 	@echo "  init       Initialize the project (install + import)"
-	@echo "  build      Compile the cdk8s TypeScript code"
+	@echo "  build      Compile the application TypeScript code"
 	@echo "  watch      Run TypeScript compiler in watch mode"
-	@echo "  synth      Synthesize Kubernetes manifests from cdk8s"
+	@echo "  synth      Synthesize Kubernetes manifests from application"
 	@echo "  test       Run tests"
 	@echo "  deploy     Apply the synthesized manifests to the current context"
-	@echo "  upgrade    Upgrade cdk8s dependencies to latest"
+	@echo "  upgrade    Upgrade application dependencies to latest"
 	@echo "  clean      Remove build artifacts"
 
 # Install tools and dependencies
 install:
 	@echo "Installing tools via mise..."
 	mise install
-	@echo "Installing cdk8s dependencies..."
-	cd cdk8s && npm install
+	@echo "Installing application dependencies..."
+	cd application && npm install
 
 # Import k8s schemas
 import:
 	@echo "Importing Kubernetes schemas..."
-	cd cdk8s && npm run import
+	cd application && npm run import
 
 # Initialize project
 init: install import
 
 # Compile TypeScript
 build:
-	@echo "Compiling cdk8s..."
-	cd cdk8s && npm run compile
+	@echo "Compiling application..."
+	cd application && npm run compile
 
 # Watch TypeScript
 watch:
-	@echo "Watching cdk8s..."
-	cd cdk8s && npm run watch
+	@echo "Watching application..."
+	cd application && npm run watch
 
 # Synthesize manifests
 synth: build
 	@echo "Synthesizing manifests..."
-	cd cdk8s && npm run synth
+	cd application && npm run synth
 
 # Run tests
 test:
 	@echo "Running tests..."
-	cd cdk8s && npm test
+	cd application && npm test
 
 # Upgrade dependencies
 upgrade:
-	@echo "Upgrading cdk8s dependencies..."
-	cd cdk8s && npm run upgrade
+	@echo "Upgrading application dependencies..."
+	cd application && npm run upgrade
 
 # Deploy to Kubernetes
 deploy: synth
 	@echo "Deploying to Kubernetes..."
-	kubectl apply -f cdk8s/dist/
+	kubectl apply -f application/dist/
 
 # Clean artifacts
 clean:
 	@echo "Cleaning up..."
-	rm -rf cdk8s/dist
-	rm -rf cdk8s/node_modules
-	rm -f cdk8s/package-lock.json
-	rm -rf cdk8s/imports
+	rm -rf application/dist
+	rm -rf application/node_modules
+	rm -f application/package-lock.json
+	rm -rf application/imports
