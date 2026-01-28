@@ -1,0 +1,32 @@
+# Node.js / cdk8s
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+
+# cdk8s generated files (keep source, ignore artifacts)
+cdk8s/imports/
+cdk8s/*.d.ts
+cdk8s/*.js
+!cdk8s/jest.config.js
+!cdk8s/main.test.js
+
+# Helm
+helm/**/charts/
+helm/**/tmpcharts/
+*.lock
+
+# Mise
+.mise/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

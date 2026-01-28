@@ -1,0 +1,10 @@
+apiVersion: v2
+name: postgres-ha
+description: A Helm chart for PostgreSQL Master-Slave setup using Bitnami dependency
+type: application
+version: 0.1.0
+appVersion: "16.1.0"
+dependencies:
+  - name: postgresql
+    version: 13.x.x
+    repository: oci://registry-1.docker.io/bitnami

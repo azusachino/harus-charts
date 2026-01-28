@@ -1,0 +1,6 @@
+[tools]
+node = "lts"
+bun = "latest"
+kubectl = "latest"
+helm = "latest"
+"npm:cdk8s-cli" = "latest"

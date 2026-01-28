@@ -1,0 +1,35 @@
+# Configuration for the bitnami/postgresql dependency
+postgresql:
+  # Use replication architecture (Master-Slave / Primary-ReadReplica)
+  architecture: replication
+  
+  auth:
+    username: app_user
+    database: app_db
+    # It is recommended to use existing secrets in production
+    # existingSecret: "my-secret"
+  
+  primary:
+    resources:
+      requests:
+        cpu: 250m
+        memory: 256Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
+    persistence:
+      enabled: true
+      size: 8Gi
+  
+  readReplicas:
+    replicaCount: 1
+    resources:
+      requests:
+        cpu: 250m
+        memory: 256Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
+    persistence:
+      enabled: true
+      size: 8Gi
