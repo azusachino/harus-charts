@@ -32,8 +32,6 @@ make install
 
 ```
 
-
-
 ### Initialization
 
 To initialize the project (install dependencies and import Kubernetes schemas):
@@ -43,8 +41,6 @@ To initialize the project (install dependencies and import Kubernetes schemas):
 make init
 
 ```
-
-
 
 ### Imports
 
@@ -56,15 +52,9 @@ make import
 
 ```
 
-
-
 ### Building & Synthesizing
 
-
-
 To compile the TypeScript code and synthesize Kubernetes manifests:
-
-
 
 ```bash
 
@@ -84,12 +74,6 @@ make synth    # Synthesizes manifests to application/dist/
 
 ```
 
-
-
-
-
-
-
 ### Testing
 
 To run the application tests:
@@ -100,8 +84,6 @@ make test
 
 ```
 
-
-
 ### Upgrading
 
 To upgrade application dependencies:
@@ -111,8 +93,6 @@ To upgrade application dependencies:
 make upgrade
 
 ```
-
-
 
 ### Deployment
 

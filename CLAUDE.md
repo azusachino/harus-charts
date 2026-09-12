@@ -61,12 +61,12 @@ The CDK8s approach uses TypeScript constructs to define Kubernetes resources pro
 
 - `argocd/cluster.yaml`: Defines cluster connection secrets for ArgoCD
 - `argocd/application.yaml`: ArgoCD Application pointing to `kubernetes/manifests/`
-- Repository URL: https://github.com/azusachino/harus-charts
+- Repository URL: <https://github.com/azusachino/harus-charts>
 - Target cluster: `okj-exchange-test`
 
 ### Directory Layout
 
-```
+```text
 application/        # CDK8s TypeScript project
 ├── src/               # Chart definitions
 ├── dist/              # Synthesized YAML output
